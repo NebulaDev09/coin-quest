@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwrq724nastc7"]
+
+[ext_resource type="Script" uid="uid://ci4do764misf2" path="res://scripts/game_controller.gd" id="1_7ma2p"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ma2p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -100
+layout_mode = 0
+offset_left = -192.0
+offset_top = -144.0
+offset_right = 2384.0
+offset_bottom = 1400.0
+color = Color(0, 0.833763, 0.356184, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 100.0
+offset_right = 1842.0
+offset_bottom = 956.0
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true

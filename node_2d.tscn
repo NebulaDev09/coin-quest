@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dejv4r3v04e2w"]
+
+[ext_resource type="Texture2D" uid="uid://c3yeqc0g40i7r" path="res://assets/cards_light/BACK.png" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 190.0
+offset_bottom = 270.0
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("1_wtcfe")
