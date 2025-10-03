@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Coin Quest"
-run/main_scene="res://scenes/coin_pair.tscn"
+run/main_scene="uid://r0nd6wonfjva"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

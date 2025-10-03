@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvya1v8nim24q"]
+
+[ext_resource type="Texture2D" uid="uid://de1xtkednjwtq" path="res://assets/Poker cards 1.3/1.2 Poker cards.png" id="1_bosod"]
+[ext_resource type="Script" uid="uid://cei65yr6gh1d6" path="res://scenes/blackjack/card.gd" id="1_f14bh"]
+
+[node name="card" type="Control"]
+custom_minimum_size = Vector2(48, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 24.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+script = ExtResource("1_f14bh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bosod")
+region_enabled = true
+region_rect = Rect2(0, 256, 48, 64)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 24.0
+offset_bottom = 32.0
+flat = true
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://r0nd6wonfjva"]
+
+[ext_resource type="Texture2D" uid="uid://dir26urwlv16u" path="res://assets/Poker cards 1.3/Deck of cards ( full cards ).png" id="1_cia5n"]
+[ext_resource type="Script" uid="uid://bfqjw32mqkcmj" path="res://scenes/blackjack/blackjack.gd" id="1_kejta"]
+[ext_resource type="PackedScene" uid="uid://cvya1v8nim24q" path="res://scenes/blackjack/card.tscn" id="3_sus7l"]
+
+[node name="blackjack" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kejta")
+
+[node name="deck" type="Sprite2D" parent="."]
+position = Vector2(1799, 507)
+scale = Vector2(3, 3)
+texture = ExtResource("1_cia5n")
+region_enabled = true
+region_rect = Rect2(47.9826, 71.1372, 49.5827, 72.9079)
+
+[node name="Button" type="Button" parent="deck"]
+offset_left = -25.0
+offset_top = -37.0
+offset_right = 24.0
+offset_bottom = 37.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="playerRegion" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 733.0
+offset_right = 1774.0
+offset_bottom = 1033.0
+
+[node name="card" parent="playerRegion" instance=ExtResource("3_sus7l")]
+layout_mode = 2
+
+[node name="dealerRegion" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 30.0
+offset_right = 1770.0
+offset_bottom = 330.0
+
+[connection signal="pressed" from="deck/Button" to="." method="_on_button_pressed"]
