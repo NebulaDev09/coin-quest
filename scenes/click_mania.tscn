@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://xw5xse58tt3s"]
+
+[ext_resource type="Script" uid="uid://cp06b0wxpbn1c" path="res://scripts/click_mania.gd" id="1_wou46"]
+[ext_resource type="Texture2D" uid="uid://buiqckju601ph" path="res://assets/cards_light/1-H.png" id="2_eicqf"]
+[ext_resource type="AudioStream" uid="uid://k41ticvpxl3e" path="res://assets/Tejas music calm ambient NO RF SFX.wav" id="3_eicqf"]
+
+[node name="clickMania" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wou46")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.497983, 0.528129, 0.893289, 1)
+
+[node name="time_left" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 912.0
+offset_right = 519.0
+offset_bottom = 1049.0
+theme_override_font_sizes/font_size = 100
+text = "Time left: 30"
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1440.0
+offset_top = 896.0
+offset_right = 1919.0
+offset_bottom = 1033.0
+theme_override_font_sizes/font_size = 100
+text = "Score: 0"
+
+[node name="card" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 270.0
+texture_normal = ExtResource("2_eicqf")
+stretch_mode = 3
+
+[node name="gameTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="cardTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eicqf")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="card" to="." method="_on_card_pressed"]
+[connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="cardTimer" to="." method="_on_card_timer_timeout"]

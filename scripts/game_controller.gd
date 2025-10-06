@@ -84,7 +84,7 @@ func build_random_pairs() -> Array:
 
 func setup_cards():
 	var symbols = build_random_pairs()
-	var card_scene = preload("res://scenes/card.tscn")
+	var card_scene = preload("res://scenes/card_flipper/card.tscn")
 	for i in range(symbols.size()):
 		var card = card_scene.instantiate()
 		card.front_texture = symbols[i]
@@ -103,6 +103,7 @@ func _card_clicked(card):
 func check_match():
 		if first_card.front_texture == second_card.front_texture:
 			matched += 1
+			$score.text = "Score: " + str(matched)
 			first_card = null
 			second_card = null
 		else:
@@ -110,3 +111,13 @@ func check_match():
 			second_card.hide_card()
 			first_card = null
 			second_card = null
+
+
+func _process(_delta):
+	$time_left.text = "Time left: " + str(int($gameTimer.time_left))
+	
+
+func _on_game_timer_timeout() -> void:
+	Global.addCoins(matched*2)
+	get_tree().change_scene_to_file("res://scenes/arcade_hall.tscn")
+	

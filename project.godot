@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Coin Quest"
-run/main_scene="uid://r0nd6wonfjva"
+run/main_scene="uid://dvfj8sq1nrnbi"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
 
 [display]
 
